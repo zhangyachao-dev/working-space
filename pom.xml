@@ -17,6 +17,7 @@
         <module>arithmetic-leetcode</module>
         <module>dba</module>
         <module>springboot-aop</module>
+        <module>springboot-mp</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
@@ -27,7 +28,7 @@
         <oracle8.version>21.1.0.0</oracle8.version>
         <mysql8.version>8.0.25</mysql8.version>
         <springBoot25.version>2.5.5</springBoot25.version>
-        <springBoot23.version>2.3.12</springBoot23.version>
+        <springBoot23.version>2.3.12.RELEASE</springBoot23.version>
     </properties>
 
     <dependencies>

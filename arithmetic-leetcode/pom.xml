@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.zyc.arithmetic</groupId>
-    <artifactId>arithmetic-letcode</artifactId>
+    <artifactId>arithmetic-leetcode</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
