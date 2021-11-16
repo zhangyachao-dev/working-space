@@ -9,13 +9,25 @@ import java.net.URISyntaxException;
 import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 public class DayTest {
     private static final Log log = Log.get();
     public static void main(String[] args) {
         DayTest dayTest = new DayTest();
-        dayTest.regx("1.1");
+        int hash = dayTest.strHash("123456");
+        System.out.println("hash = " + hash);
+        System.out.println(hash % 5);
+    }
+
+    private int strHash(String str){
+        return str.hashCode();
+    }
+
+    private void time(){
+        long millis = TimeUnit.HOURS.toMillis(1);
+        System.out.println(millis);
     }
 
     private void regx(String str){

@@ -18,6 +18,8 @@
         <module>dba</module>
         <module>springboot-aop</module>
         <module>springboot-mp</module>
+        <module>elasticsearch</module>
+        <module>es-ext-tic</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
