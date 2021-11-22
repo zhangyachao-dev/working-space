@@ -3,12 +3,14 @@ package com.zyc.test;
 import cn.hutool.log.Log;
 import com.google.common.collect.Lists;
 import com.zyc.utils.RegularExpression;
+import org.apache.commons.collections4.CollectionUtils;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
@@ -16,9 +18,50 @@ public class DayTest {
     private static final Log log = Log.get();
     public static void main(String[] args) {
         DayTest dayTest = new DayTest();
-        int hash = dayTest.strHash("123456");
-        System.out.println("hash = " + hash);
-        System.out.println(hash % 5);
+        dayTest.listsRemove();
+    }
+
+    private void listsRemove(){
+        List<String> l1 = Lists.newArrayList();
+        l1.add("a");
+        l1.add("b");
+        l1.add("c");
+        l1.add("d");
+        l1.add("e");
+        l1.add("f");
+        List<String> l2 = Lists.newArrayList(l1);
+        l2.add("12323");
+        l2.remove("b");
+        System.out.println("---------l1-----------");
+        l1.forEach(System.out::println);
+        System.out.println("---------l2-----------");
+        l2.forEach(System.out::println);
+    }
+
+    private void collectionsOps(){
+        List<String> l1 = Lists.newArrayList();
+        l1.add("a");
+        l1.add("b");
+        l1.add("c");
+        l1.add("d");
+        l1.add("e");
+        l1.add("f");
+        List<String> l2 = Lists.newArrayList();
+        /*l2.add("a");
+        l2.add("b");
+        l2.add("c");*/
+        l2.add("d");
+        l2.add("e");
+        l2.add("f");
+
+        List<String> l3 = (List<String>)CollectionUtils.disjunction(l1,l2);
+        l3.forEach(System.out::println);
+    }
+
+    private void strFormat(){
+        String a = String.format("/sad/%s", "qqqqqqqqqqqqqq");
+        CopyOnWriteArrayList<Object> list = new CopyOnWriteArrayList<>();
+        System.out.println(a);
     }
 
     private int strHash(String str){

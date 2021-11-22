@@ -13,6 +13,9 @@
     <artifactId>elasticsearch</artifactId>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>es-ext-tic</module>
+    </modules>
     <properties>
     </properties>
 
