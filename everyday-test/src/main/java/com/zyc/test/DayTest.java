@@ -1,14 +1,19 @@
 package com.zyc.test;
 
+import cn.hutool.json.JSON;
 import cn.hutool.log.Log;
+import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.zyc.utils.RegularExpression;
 import org.apache.commons.collections4.CollectionUtils;
 
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
@@ -18,7 +23,46 @@ public class DayTest {
     private static final Log log = Log.get();
     public static void main(String[] args) {
         DayTest dayTest = new DayTest();
-        dayTest.listsRemove();
+        dayTest.strSubs();
+        //System.out.println(System.currentTimeMillis());
+    }
+
+    private void json(){
+        Map<Object, Object> hashMap = Maps.newHashMap();
+        hashMap.put("deployDir", "/data/bes");
+        String string = JSONObject.toJSONString(hashMap);
+        System.out.println(string);
+    }
+
+    private void strSub(){
+        String qqqq = "/sdasdsdad/sdadasd/";
+        System.out.println(qqqq.length());
+        System.out.println(qqqq.substring(0, qqqq.length() -2));
+        System.out.println(qqqq.substring(0, qqqq.length() -1));
+    }
+
+        private void strBuild(){
+        String a = null;
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(a);
+        stringBuilder.append(",");
+        System.out.println(stringBuilder.toString().substring(0, stringBuilder.toString().length() -1));
+    }
+
+    private void listsRemove2(){
+        List<String> l1 = Lists.newArrayList();
+        l1.add("a");
+        l1.add("b");
+        l1.add("c");
+        l1.add("d");
+        l1.add("e");
+        l1.add("f");
+        List<String> l2 = Lists.newArrayList(l1);
+        l2.remove("c");
+        l1.forEach(System.out::println);
+        System.out.println("----------");
+        l2.forEach(System.out::println);
+
     }
 
     private void listsRemove(){
@@ -94,11 +138,13 @@ public class DayTest {
     }
 
     private void checkUri(){
-        String address = "https://www.baidu.com/aaaad";
+        String address = "https://www.baidu.com:9987/aaaad";
         //URI uri = URI.create(address);
         try {
             URI uri = new URI(address);
             System.out.println(uri.getPort());
+            System.out.println(uri.getScheme());
+
         } catch (URISyntaxException e) {
             e.printStackTrace();
         }
@@ -207,6 +253,18 @@ public class DayTest {
         }).collect(Collectors.toList()).get(0);
         lists.remove(user);
         lists.forEach(System.out::println);
+    }
+
+    private void strSubs(){
+        String dir = "/home/zyc/usermanger/sd/er/start.sh/";
+        if(dir.endsWith("/")){
+            dir = dir.substring(0, dir.length() -1);
+            System.out.println(dir);
+        }
+        String a = dir.substring(0, dir.lastIndexOf("/"));
+        String b = dir.substring(dir.lastIndexOf("/") + 1, dir.length());
+        System.out.println(a);
+        System.out.println(b);
     }
 
 }

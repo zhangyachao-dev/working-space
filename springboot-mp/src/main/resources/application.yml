@@ -7,7 +7,7 @@ spring:
   application:
     name: mybatis-plus-startBoot
   datasource:
-    url: jdbc:mysql://${vm.host}:3306/mp_template?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    url: jdbc:mysql://127.0.0.1:3306/mp_template?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: 123456
