@@ -1,6 +1,5 @@
 package com.zyc.test;
 
-import cn.hutool.json.JSON;
 import cn.hutool.log.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Lists;
@@ -163,6 +162,7 @@ public class DayTest {
         lists.add("1234");
         lists.add("1231");
         lists.add("12343523");
+        String ip = "aas";
         Lists.newArrayList(lists).forEach(item -> {
             if("1231".equals(item)){
                 lists.remove(item);
