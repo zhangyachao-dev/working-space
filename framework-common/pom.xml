@@ -9,15 +9,20 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.zyc.</groupId>
-    <artifactId>elasticsearch</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>framework-common</artifactId>
 
-    <modules>
-        <module>es-ext-tic</module>
-        <module>elk-simpe</module>
-    </modules>
     <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
 </project>

@@ -1,5 +1,6 @@
 package com.zyc.test;
 
+import cn.hutool.Hutool;
 import cn.hutool.log.Log;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Lists;
@@ -9,10 +10,7 @@ import org.apache.commons.collections4.CollectionUtils;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
@@ -22,7 +20,9 @@ public class DayTest {
     private static final Log log = Log.get();
     public static void main(String[] args) {
         DayTest dayTest = new DayTest();
-        dayTest.strSubs();
+        //dayTest.strSubs();
+        Hutool.printAllUtils();
+       //Lists.newArrayList(allUtils).forEach(System.out::println);
         //System.out.println(System.currentTimeMillis());
     }
 

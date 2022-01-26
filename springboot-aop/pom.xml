@@ -45,6 +45,11 @@
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.zyc</groupId>
+            <artifactId>framework-common</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
