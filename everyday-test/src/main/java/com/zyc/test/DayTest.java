@@ -8,6 +8,7 @@ import com.google.common.collect.Maps;
 import com.zyc.utils.RegularExpression;
 import org.apache.commons.collections4.CollectionUtils;
 
+import java.lang.reflect.Field;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.*;
@@ -20,8 +21,9 @@ public class DayTest {
     private static final Log log = Log.get();
     public static void main(String[] args) {
         DayTest dayTest = new DayTest();
-        //dayTest.strSubs();
-        Hutool.printAllUtils();
+        String s = dayTest.reflectStr("ef");
+        System.out.println(s);
+        //Hutool.printAllUtils();
        //Lists.newArrayList(allUtils).forEach(System.out::println);
         //System.out.println(System.currentTimeMillis());
     }
@@ -34,8 +36,9 @@ public class DayTest {
     }
 
     private void strSub(){
-        String qqqq = "/sdasdsdad/sdadasd/";
+        String qqqq = "/sdasdsdad/sdadasd/agent start";
         System.out.println(qqqq.length());
+        System.out.println(qqqq.substring(0,qqqq.lastIndexOf("/")));
         System.out.println(qqqq.substring(0, qqqq.length() -2));
         System.out.println(qqqq.substring(0, qqqq.length() -1));
     }
@@ -204,32 +207,18 @@ public class DayTest {
 
 
     private void strTest(){
-        //String a = "/asdasdasd/";
-        //String b = a.substring(0,a.length() - 1);
-        //System.out.println(b);
-        //Hutool.printAllUtils();
-        /*String aa = "asdasd";
-        String aaq = "asdasd ";
-        System.out.println(aa.equals(aaq));
-        log.info("adasds{}","-------");*/
-        /*Boolean aa = null;
-        if(aa){
-            System.out.println("aa");
-        }*/
+        String a = "/home/da/eee/uuq/aa.sh/";
+        String b = "/home/da/eee/uuq/bb.sh/";
+        String c = "/home/da/eee/uuq1/aa.sh";
+        String d = "/home/da/eee/uuq2/bb.sh";
+        if(c.endsWith("/")){
+            System.out.println(c.substring(0, c.length() - 1));
+        }else{
+            System.out.println("else: " + c);
+        }
 
-        /*String a = "";
+        System.out.println(d.substring(0, d.lastIndexOf("/")));
 
-        String b = "";
-        String c = a + b;
-        System.out.println(c);*/
-
-        //String a = "sadUUda-dadasda-dasdasd";
-        //System.out.println(a.replace("-",""));
-        //System.out.println(a.toLowerCase());
-        //System.out.println(a.toUpperCase());
-
-        //String b = "sadUUda-dadasda-dasdasd";
-        //System.out.println(a.replaceAll("-",""));
     }
 
     private void listSort(){
@@ -265,6 +254,18 @@ public class DayTest {
         String b = dir.substring(dir.lastIndexOf("/") + 1, dir.length());
         System.out.println(a);
         System.out.println(b);
+    }
+
+    private String reflectStr(String s){
+        Class<? extends String> clazz = s.getClass();
+        try {
+            Field value = clazz.getDeclaredField("value");
+            value.setAccessible(true);
+            value.set(s, new char[]{'1','e','f','2'});
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return s;
     }
 
 }

@@ -3,15 +3,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
+    <!--<parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.3.12.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
-    </parent>
+        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;
+    </parent>-->
     <groupId>com.zyc</groupId>
     <artifactId>zyc-project</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <modules>
         <module>everyday-test</module>
         <module>arithmetic-leetcode</module>
@@ -22,6 +22,7 @@
         <module>arithmetic-sorting</module>
         <module>lock</module>
         <module>framework-common</module>
+        <module>task-job</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
@@ -31,8 +32,9 @@
         <hutool.version>5.7.13</hutool.version>
         <oracle8.version>21.1.0.0</oracle8.version>
         <mysql8.version>8.0.25</mysql8.version>
-        <springBoot25.version>2.5.5</springBoot25.version>
-        <springBoot23.version>2.3.12.RELEASE</springBoot23.version>
+        <springBoot255.version>2.5.5</springBoot255.version>
+        <springBoot2312.version>2.3.12.RELEASE</springBoot2312.version>
+        <lombok.version>1.18.0</lombok.version>
     </properties>
 
     <dependencies>
@@ -63,7 +65,12 @@
             <dependency>
                 <groupId>com.zyc</groupId>
                 <artifactId>framework-common</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

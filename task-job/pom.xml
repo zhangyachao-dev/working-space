@@ -9,13 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>lock</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>jvm-lock</module>
-    </modules>
+    <artifactId>task-job</artifactId>
+    <version>1.0</version>
 
     <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
 </project>
