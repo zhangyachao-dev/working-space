@@ -1,0 +1,24 @@
+server:
+  port: 10005
+
+zookeeper:
+  host1: 192.168.19.12:2181
+  host2: 192.168.19.12:2182
+  host3: 192.168.19.12:2183
+  #host: 192.168.31.220:2181
+
+elasticjob:
+  reg-center:
+    server-lists: ${zookeeper.host1},${zookeeper.host2},${zookeeper.host3}
+    #server-lists: ${zookeeper.host}
+    namespace: zyc-elasticjob-test
+    session-timeout-milliseconds: 600000
+    connection-timeout-milliseconds: 600000
+  jobs:
+    mySimpleJob:
+      elasticJobClass: com.zyc.elasticjoblite.jobs.MySimpleJob
+      cron: 0/5 * * * * ?
+      shardingTotalCount: 3
+      shardingItemParameters: 0=Beijing,1=Shanghai,2=Guangzhou
+      description: "这是我的第一个作业！"
+      overwrite: true

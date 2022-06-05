@@ -23,6 +23,10 @@
         <module>lock</module>
         <module>framework-common</module>
         <module>task-job</module>
+        <module>zookeeper</module>
+        <module>nginx-parser</module>
+        <module>shiro-learn</module>
+        <module>shiro-springboot-shiro-project</module>
     </modules>
     <packaging>pom</packaging>
     <properties>
@@ -35,6 +39,7 @@
         <springBoot255.version>2.5.5</springBoot255.version>
         <springBoot2312.version>2.3.12.RELEASE</springBoot2312.version>
         <lombok.version>1.18.0</lombok.version>
+        <xxljob.version>2.3.0</xxljob.version>
     </properties>
 
     <dependencies>

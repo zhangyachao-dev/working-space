@@ -3,6 +3,7 @@ package com.zyc.aop.controller;
 import com.zyc.aop.service.TestService;
 import com.zyc.common.Result;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     private TestService testService;
+
+    @Value("${spring.qwe-re.ff:0}")
+    private Integer age;
 
     @Autowired
     public void setTestService(TestService testService) {

@@ -33,6 +33,11 @@
             <scope>runtime</scope>
             <classifier>jdk8</classifier>
         </dependency>
+        <dependency>
+            <groupId>ognl</groupId>
+            <artifactId>ognl</artifactId>
+            <version>3.3.2</version>
+        </dependency>
 
     </dependencies>
 

@@ -9,27 +9,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>task-job</artifactId>
+    <artifactId>zookeeper</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>elastic-job-spring-boot</module>
-        <module>xxl-job-executor-demo</module>
+        <module>curator-client</module>
     </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <elasticjob-lite-version>3.0.1</elasticjob-lite-version>
     </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.apache.shardingsphere.elasticjob</groupId>
-                <artifactId>elasticjob-lite-spring-boot-starter</artifactId>
-                <version>${elasticjob-lite-version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
 </project>
