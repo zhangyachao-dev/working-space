@@ -38,6 +38,7 @@
         <mysql8.version>8.0.25</mysql8.version>
         <springBoot255.version>2.5.5</springBoot255.version>
         <springBoot2312.version>2.3.12.RELEASE</springBoot2312.version>
+        <springBoot215.version>2.1.5.RELEASE</springBoot215.version>
         <lombok.version>1.18.0</lombok.version>
         <xxljob.version>2.3.0</xxljob.version>
     </properties>
